@@ -28,6 +28,7 @@ call dein#add('scrooloose/syntastic')
 call dein#add('fatih/vim-go')
 call dein#add('rust-lang/rust.vim')
 call dein#add('racer-rust/vim-racer')
+call dein#add('ludovicchabant/vim-gutentags')
 
 " You can specify revision/branch/tag.
 " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -49,6 +50,8 @@ syntax on
 set tabstop=4
 set cursorline
 set cc=80
+set ignorecase
+set smartcase
 
 colorscheme molokai
 
