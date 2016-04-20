@@ -57,6 +57,7 @@ colorscheme molokai
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
+autocmd CompleteDone * pclose!
 
 " Indent guides
 let g:indent_guides_enable_on_vim_startup = 1
