@@ -24,7 +24,7 @@ call dein#add('airblade/vim-gitgutter')
 call dein#add('vim-airline/vim-airline')
 call dein#add('mxw/vim-jsx')
 call dein#add('tpope/vim-fugitive') " Git in Airline
-call dein#add('scrooloose/syntastic')
+call dein#add('benekastah/neomake')
 call dein#add('fatih/vim-go')
 call dein#add('rust-lang/rust.vim')
 call dein#add('racer-rust/vim-racer')
@@ -92,3 +92,13 @@ let g:ctrlp_abbrev = {
     \ },
     \ ]
   \ }
+
+" Neomake
+fun! CustomNeomake()
+  if &ft == 'rust'
+    Neomake! cargo
+  else
+    Neomake
+  endif
+endfun
+autocmd! BufWritePost * call CustomNeomake()
