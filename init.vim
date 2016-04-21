@@ -79,3 +79,15 @@ let g:rustfmt_autosave = 1
 let g:formatdef_hh_format = '"hh_format"'
 let g:formatters_php = ['hh_format']
 autocmd BufWrite *.php,*.hh :Autoformat
+
+" CtrlP
+let g:ctrlp_abbrev = {
+  \ 'gmode': 'i',
+  \ 'abbrevs': [
+    \ {
+      \ 'pattern': ' ',
+      \ 'expanded': '',
+      \ 'mode': 'pfrz',
+    \ },
+    \ ]
+  \ }
