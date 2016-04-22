@@ -57,6 +57,12 @@ set smartcase
 
 colorscheme molokai
 
+" Create temporary files in a temp dir
+let g:tmpdir = $HOME . '/.vimtmp'
+call mkdir(g:tmpdir, 'p')
+let &backupdir = g:tmpdir . '//,.'
+let &directory = g:tmpdir . '//,.'
+
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 autocmd CompleteDone * pclose!
@@ -103,3 +109,7 @@ fun! CustomNeomake()
   endif
 endfun
 autocmd! BufWritePost * call CustomNeomake()
+
+" Gutentags
+set statusline+=%{gutentags#statusline()}
+let g:gutentags_cache_dir = g:tmpdir
