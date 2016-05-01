@@ -31,6 +31,7 @@ call dein#add('racer-rust/vim-racer')
 call dein#add('ludovicchabant/vim-gutentags')
 call dein#add('Chiel92/vim-autoformat')
 call dein#add('scrooloose/nerdtree')
+call dein#add('mustache/vim-mustache-handlebars')
 
 " You can specify revision/branch/tag.
 " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
