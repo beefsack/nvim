@@ -87,6 +87,7 @@ let g:rustfmt_fail_silently = 1
 " Hack
 let g:formatdef_hh_format = '"hh_format"'
 let g:formatters_php = ['hh_format']
+au BufWrite *.php :Autoformat
 
 " CtrlP
 let g:ctrlp_abbrev = {
