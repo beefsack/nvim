@@ -15,7 +15,7 @@ call dein#add('Shougo/dein.vim')
 
 " Add or remove your plugins here:
 call dein#add('ctrlpvim/ctrlp.vim')
-call dein#add('tomasr/molokai')
+call dein#add('dracula/vim')
 call dein#add('hhvm/vim-hack')
 call dein#add('Shougo/deoplete.nvim')
 call dein#add('tpope/vim-sleuth') " Indentation detection
@@ -56,7 +56,7 @@ set cc=80
 set ignorecase
 set smartcase
 
-colorscheme molokai
+color dracula
 
 " Create temporary files in a temp dir
 let g:tmpdir = $HOME . '/.vimtmp'
