@@ -28,7 +28,6 @@ call dein#add('fatih/vim-go')
 call dein#add('rust-lang/rust.vim')
 call dein#add('racer-rust/vim-racer')
 call dein#add('ludovicchabant/vim-gutentags')
-call dein#add('Chiel92/vim-autoformat')
 
 " You can specify revision/branch/tag.
 " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -82,9 +81,12 @@ let g:rustfmt_fail_silently = 1
 nmap <C-]> gd
 
 " Hack
-let g:formatdef_hh_format = '"hh_format -i"'
-let g:formatters_php = ['hh_format']
-au BufWrite *.php :Autoformat
+function HhFormat()
+  silent !hh_format -i %
+  edit
+  syntax on
+endfunction
+au BufWritePost *.php call HhFormat()
 
 " Gutentags
 set statusline+=%{gutentags#statusline()}
