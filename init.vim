@@ -55,6 +55,7 @@ set smartcase
 set clipboard=unnamedplus
 
 color dracula
+highlight Pmenu ctermbg=238 guibg=gray40
 
 let mapleader=","
 :nnoremap <leader>f :Denite file_rec<CR>
