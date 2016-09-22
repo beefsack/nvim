@@ -79,6 +79,7 @@ let g:airline_powerline_fonts = 1
 " Rust
 let g:rustfmt_autosave = 1
 let g:rustfmt_fail_silently = 1
+nmap <C-]> gd
 
 " Hack
 let g:formatdef_hh_format = '"hh_format -i"'
