@@ -82,7 +82,7 @@ let g:rustfmt_fail_silently = 1
 " Hack
 function HhFormat()
   let formatted = system('hh_format', join(getline(1, '$'), "\n"))
-  if !empty(formatted)
+  if !empty(formatted) && !v:shell_error
     let c_pos = getpos('.')
     %delete
     put =formatted
