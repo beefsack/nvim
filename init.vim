@@ -81,11 +81,16 @@ let g:rustfmt_fail_silently = 1
 
 " Hack
 function HhFormat()
-  silent !hh_format -i %
-  edit
-  syntax on
+  let formatted = system('hh_format', join(getline(1, '$'), "\n"))
+  if !empty(formatted)
+    let c_pos = getpos('.')
+    %delete
+    put =formatted
+    1d
+    call setpos('.', c_pos)
+  endif
 endfunction
-au BufWritePost *.php call HhFormat()
+au BufWritePre *.php call HhFormat()
 
 " Gutentags
 set statusline+=%{gutentags#statusline()}
