@@ -28,6 +28,7 @@ call dein#add('fatih/vim-go')
 call dein#add('rust-lang/rust.vim')
 call dein#add('racer-rust/vim-racer')
 call dein#add('ludovicchabant/vim-gutentags')
+call dein#add('mileszs/ack.vim')
 
 " You can specify revision/branch/tag.
 " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -95,3 +96,8 @@ au BufWritePre *.php call HhFormat()
 " Gutentags
 set statusline+=%{gutentags#statusline()}
 let g:gutentags_cache_dir = g:tmpdir
+
+" ack.vim
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
