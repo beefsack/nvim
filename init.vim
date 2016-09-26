@@ -100,6 +100,8 @@ set statusline+=%{gutentags#statusline()}
 let g:gutentags_cache_dir = g:tmpdir
 
 " ack.vim
-if executable('ag')
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
+elseif executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
