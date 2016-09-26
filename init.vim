@@ -69,8 +69,6 @@ let &directory = g:tmpdir . '//,.'
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 autocmd CompleteDone * pclose!
-let g:deoplete#omni#input_patterns = {}
-let g:deoplete#omni#input_patterns.php = '\w+|[^. \t]->\w*|\w+::\w*'
 
 " JSX
 let g:jsx_ext_required = 0
